@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator in java</title>
+</head>
+<body>
+    <div>
+  <p>Enter the value of a:</p>
+  <input type="text" id="a">
+  <p> Enter the value of b:</p>
+  <input type="text" id="b">
+
+  
+</div>
+<button onclick="hello()" style="margin-top: 30px;">submit</button>
+ 
+
+
+    <h1>I made a calculator using java</h1>
+
+
+    <script>
+        function hello(){
+        var a= parseInt(document.getElementById('a').value);
+        var b =parseInt(document.getElementById('b').value);
+        if(a!=0 && b!=0){
+             let  sum= a + b;
+               let mul = a * b;
+               let div = a/b;
+        console.log(`The sum of a=${a} and b=${b} is: ${sum}`);
+        console.log(`The multiplication of a=${a} and b=${b} is: ${mul}`);
+        console.log(`The division of a=${a} and b=${b} is: ${div}`);
+        }
+        else{
+            console.log("Invalid number");
+        }
+    }
+    </script>
+</body>
+</html>
