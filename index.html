@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Word guressing game</title>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="word_box">
+            <div class="header">
+                <h1>Word Guessing Game</h1>
+            </div>
+            <h2 class="score" id="score">0</h2>
+            <h1 class="Word" id="Word">hello</h1>
+
+            <div class="input_field">
+                
+                <input type="text" placeholder="Enter your answer" id="input">
+            </div>
+        <div class="submit_btn">
+            <input type="submit" class="btn" onclick="change_word()">
+            </div>
+        </div>
+      
+    </div>
+
+    <script>
+        var words=[{
+            jumbled:'plpea',
+            corrrect:'apple'
+        },
+
+        {
+            jumbled:'goamn',
+            corrrect:'mango'
+        },
+        {
+            jumbled:'lloeh',
+            corrrect:'hello'
+        },
+        {
+            jumbled:'nrege',
+            corrrect:'green'
+        },
+        {
+            jumbled:'lotwel',
+            corrrect:'towel'
+        },
+        {
+            jumbled:'hocoatel',
+            corrrect:'chocolate'
+        },
+        {
+            jumbled:'paltop',
+            corrrect:'laptop'
+        },
+        ];
+  var word_count=0;
+
+
+   
+  var score = document.getElementById("score");
+     function view(){
+        var Word = document.getElementById("Word");
+        Word.innerHTML= words[word_count].jumbled;
+        
+   }
+   view();
+
+  function change_word(){
+      
+      var input = document.getElementById('input').value;
+
+
+           
+
+
+
+
+    
+    if( words[word_count].corrrect===input){
+        
+        score.innerText=word_count+1;
+        
+    }
+    else{
+        score.innerText=word_count-1;
+    }
+
+    if(word_count>=words.length-1){
+        let score = document.getElementById("score").innerText;
+        alert(`your score is ${score}` );
+        location.reload();
+
+
+    }
+    else{
+
+    
+    word_count++;
+    view();
+    document.getElementById('input').value='';
+    
+}
+
+  }   
+
+    </script>
+</body>
+</html>
